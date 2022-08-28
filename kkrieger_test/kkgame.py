@@ -40,6 +40,8 @@ class KKriegerGame:
         if not os.path.exists(self._path_to_exe):
             raise GameExeNotExist(f'[{self.name}] Cant find game exe on {self._path_to_exe}')
 
+        self._start_game()
+
     def _wait_loading(self):
         while self.GAME_RUNNING:
             if self.GAME_STATE != KG_MENU:
@@ -60,7 +62,7 @@ class KKriegerGame:
     def read_gamestate(self):
         self.GAME_STATE = self.process.read(self.gm_pointer)
 
-    def start_game(self):
+    def _start_game(self):
         subprocess.Popen(self._path_to_exe, shell=True, stdout=subprocess.DEVNULL)
 
         while True:

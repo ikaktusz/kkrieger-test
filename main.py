@@ -15,7 +15,6 @@ def main():
     print('Test started.')
 
     kg = KKriegerGame()
-    kg.start_game()
     pm = PresentMon(kg)
     pt = PerfomanceTracker(kg)
 
