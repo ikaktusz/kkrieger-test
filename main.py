@@ -3,19 +3,15 @@ import sys
 import time
 import logging
 
+import kkrieger_test
 from kkrieger_test.kkgame import KKriegerGame
 from kkrieger_test.kkgame import KG_MENU, KG_RUN, KG_LOST
-from kkrieger_test.utils import (
-    PresentMon,
-    PerfomanceTracker,
-    start_cli,
-    take_screenshot,
-    press_key
-    )
+from kkrieger_test import utils
+from kkrieger_test.utils import PresentMon, PerfomanceTracker
 
 
 def main():
-    start_cli()
+    kkrieger_test.run()
     print('Test started.')
 
     kg = KKriegerGame()
@@ -26,21 +22,24 @@ def main():
     while True:
         kg.read_gamestate()
         if kg.GAME_STATE == KG_MENU or kg.GAME_STATE == KG_LOST:
-            press_key('enter', 0.1)
-            logging.info('Main menu')
+            utils.press_key('enter')
+            logging.info('[TEST] Main menu')
+
         elif kg.GAME_STATE == KG_RUN:
-            logging.info('Game runing')
+            logging.info('[TEST] Game runing')
 
             time.sleep(1)
 
-            take_screenshot('start')
+            utils.screenshot('start')
             # запуск снятия статистики
             pm.start()
             pt.start(kg.process.pid)
-            press_key('W', 3)     
-            take_screenshot('end')
+
+            utils.press_key('W', press_sec=3)     
+            utils.screenshot('end')
             
-            time.sleep(1)
+            utils.press_key('esc')
+            time.sleep(2)
             
             # остановка снятия статистики
             pm.stop()
@@ -49,8 +48,8 @@ def main():
             kg.exit_game()
             break
         else:
-            logging.warn(f'Wrong gamemode: {kg.GAME_STATE}')
-            continue
+            logging.warning(f'[TEST] Wrong gamemode: {kg.GAME_STATE}')
+            break
         time.sleep(0.5)
         
     logging.info('Test finished!')
