@@ -5,6 +5,7 @@ import subprocess
 
 from ReadWriteMemory import ReadWriteMemory
 from ReadWriteMemory import ReadWriteMemoryError
+
 from kkrieger_test import cfg
 from kkrieger_test.utils import press_key
 

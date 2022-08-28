@@ -53,7 +53,7 @@ class PresentMon:
                 '-terminate_existing'
             ]
             subprocess.Popen(cmd, shell=False)
-            self.process.communicate() # Wait untill PresentMon finished.
+            self.process.communicate() # Wait untill PresentMon finishes.
             logging.info(f'[{self.name}]: recording stopped.')
             self._calc_fps()
 
@@ -89,7 +89,7 @@ class PerfomanceTracker:
         with self.proc.oneshot():
             row = {
                 'proc_name': self.proc.name(),
-                'mem_usage': self.proc.memory_info().rss, #from psutil._common import bytes2human
+                'mem_usage': self.proc.memory_info().rss,
                 'cpu_usage': self.proc.cpu_percent() / self.cpu_count,
                 'threads_num': self.proc.num_threads(),
             }
@@ -128,6 +128,7 @@ class PerfomanceTracker:
             self.running = False
             logging.info(f'[{self.name}]: stoped')
             logging.info(f'[{self.name}]: write data to: {self.file_path}')
+
 
 def screenshot(out_file_name):
     output_path = os.path.join(cfg['output_path'], 'screenshots')

@@ -31,17 +31,17 @@ def main():
             time.sleep(1)
 
             utils.screenshot('start')
-            # запуск снятия статистики
+            # Start recording statistics.
             pm.start()
             pt.start(kg.process.pid)
 
-            utils.press_key('W', press_sec=3)     
+            utils.press_key('W', press_sec=3) # Duration of walking forward.
             utils.screenshot('end')
             
             utils.press_key('esc')
             time.sleep(2)
             
-            # остановка снятия статистики
+            # Stop recording statistics.
             pm.stop()
             pt.stop()
             
