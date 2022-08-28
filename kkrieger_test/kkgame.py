@@ -34,6 +34,7 @@ class KKriegerGame:
         self.name = type(self).__name__
         self.GAME_RUNNING = False
         self.GAME_STATE = None
+        self.pid = None
 
         self._path_to_exe = cfg['game_path']
         if not os.path.exists(self._path_to_exe):
@@ -75,6 +76,7 @@ class KKriegerGame:
                 logging.info(f'[{self.name}] Process found!')
                 break
 
+        self.pid = self.process.pid
         self._wait_loading()
 
     def exit_game(self):

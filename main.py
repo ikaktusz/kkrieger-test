@@ -16,8 +16,8 @@ def main():
 
     kg = KKriegerGame()
     kg.start_game()
-    pm = PresentMon(kg.process_name)
-    pt = PerfomanceTracker()
+    pm = PresentMon(kg)
+    pt = PerfomanceTracker(kg)
 
     while True:
         kg.read_gamestate()
@@ -33,7 +33,7 @@ def main():
             utils.screenshot('start')
             # Start recording statistics.
             pm.start()
-            pt.start(kg.process.pid)
+            pt.start()
 
             utils.press_key('W', press_sec=3) # Duration of walking forward.
             utils.screenshot('end')

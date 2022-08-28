@@ -17,7 +17,7 @@ from kkrieger_test import cfg
 
 class PresentMon:
 
-    def __init__(self, process_to_record, out_file_name='presentmon.csv'):
+    def __init__(self, process_to_record):
         self.name = type(self).__name__
         self.exe_file = glob.glob('PresentMon-*.*.*.exe')
         self.PM_EXISTS = False
@@ -26,10 +26,10 @@ class PresentMon:
             logging.warn(f'[{self.name}]: Cant find executable file, fps record not avalible!')
         else:
             self.output_path = cfg['output_path']
-            self.out_file_name = out_file_name
+            self.out_file_name = cfg['presentmon']['output_file']
             self.output_pm = os.path.join(self.output_path, self.out_file_name)
             self.exe_path = os.path.join(os.getcwd(), self.exe_file[0])
-            self.process_to_record = process_to_record
+            self.process_to_record = process_to_record.pid
             self.PM_EXISTS = True
             self.process = None # Main process.
 
@@ -40,8 +40,8 @@ class PresentMon:
                 '-no_top',
                 '-output_file',
                 self.output_pm,
-                '-process_name',
-                self.process_to_record
+                '-process_id',
+                f'{self.process_to_record}'
             ]
             self.process = subprocess.Popen(cmd, shell=False)
             logging.info(f'[{self.name}]: recording started.')
@@ -77,13 +77,14 @@ class PresentMon:
 
 class PerfomanceTracker:
 
-    def __init__(self):
+    def __init__(self, process_to_record):
         self.name = type(self).__name__
         self.output_path = cfg['output_path']
         self.out_file_name = cfg['perfomance_tracker']['output_file']
         self.file_path = os.path.join(self.output_path, self.out_file_name)
         self.cpu_count = psutil.cpu_count()
-        self.running = False  
+        self.running = False
+        self.pid = process_to_record.pid
 
     def _collect_data(self):
         with self.proc.oneshot():
@@ -95,9 +96,9 @@ class PerfomanceTracker:
             }
         return row
 
-    def _start(self, pid):
+    def _start(self):
         try:
-            self.proc = psutil.Process(pid=pid)
+            self.proc = psutil.Process(pid=self.pid)
 
             with open(self.file_path, 'w', newline='') as output:
                 fieldnames = ['proc_name', 'mem_usage', 'cpu_usage', 'threads_num']
@@ -117,10 +118,10 @@ class PerfomanceTracker:
             self.running = False
             return
 
-    def start(self, pid):
+    def start(self):
         logging.info(f'[{self.name}]: started')
         self.running = True
-        thread = threading.Thread(target=self._start, args=(pid,))
+        thread = threading.Thread(target=self._start)
         thread.start()
 
     def stop(self):
