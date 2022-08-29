@@ -10,7 +10,6 @@ from kkrieger_test.kkgame import KKriegerGame
 from kkrieger_test.kkgame import KG_MENU, KG_RUN, KG_LOST
 
 
-
 def main():
     kkrieger_test.run()
     print('Test started.')
