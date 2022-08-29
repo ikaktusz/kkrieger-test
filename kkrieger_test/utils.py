@@ -44,7 +44,7 @@ class PresentMon:
                 f'{self.process_to_record}'
             ]
             self.process = subprocess.Popen(cmd, shell=False)
-            logging.info(f'[{self.name}]: recording started.')
+            logging.info(f'[{self.name}]: Recording started.')
 
     def stop(self):
         if self.PM_EXISTS:
@@ -54,7 +54,7 @@ class PresentMon:
             ]
             subprocess.Popen(cmd, shell=False)
             self.process.communicate() # Wait untill PresentMon finishes.
-            logging.info(f'[{self.name}]: recording stopped.')
+            logging.info(f'[{self.name}]: Recording stopped.')
             self._calc_fps()
 
     def _calc_fps(self):
@@ -72,7 +72,7 @@ class PresentMon:
         with open(out_file, 'w') as output:
             output.write(f'Avg fps of session: {avg_fps:.2f}')
 
-        logging.info(f'[{self.name}]: write avg framerate to file: {out_file}')
+        logging.info(f'[{self.name}]: Write avg framerate to file: {out_file}')
 
 
 class PerfomanceTracker:
@@ -127,8 +127,8 @@ class PerfomanceTracker:
     def stop(self):
         if self.running:
             self.running = False
-            logging.info(f'[{self.name}]: stoped')
-            logging.info(f'[{self.name}]: write data to: {self.file_path}')
+            logging.info(f'[{self.name}]: Stopped')
+            logging.info(f'[{self.name}]: Write data to: {self.file_path}')
 
 
 def screenshot(out_file_name):

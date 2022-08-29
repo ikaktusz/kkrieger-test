@@ -4,10 +4,11 @@ import time
 import logging
 
 import kkrieger_test
-from kkrieger_test.kkgame import KKriegerGame
-from kkrieger_test.kkgame import KG_MENU, KG_RUN, KG_LOST
 from kkrieger_test import utils
 from kkrieger_test.utils import PresentMon, PerfomanceTracker
+from kkrieger_test.kkgame import KKriegerGame
+from kkrieger_test.kkgame import KG_MENU, KG_RUN, KG_LOST
+
 
 
 def main():
