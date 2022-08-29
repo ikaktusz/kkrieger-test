@@ -1,0 +1,20 @@
+{
+    "System": {
+        "Time": "8/30/2022, 01:02:43",
+        "MachineName": "DESKTOP-E2N58N5",
+        "OperatingSystem": "Windows 10 Pro 64-bit (10.0, Build 19044) (19041.vb_release.191206-1406)",
+        "SystemManufacturer": "Gigabyte Technology Co., Ltd.",
+        "SystemModel": "B660M GAMING DDR4",
+        "Processor": "12th Gen Intel(R) Core(TM) i5-12400 (12 CPUs), ~2.5GHz",
+        "Memory": "16384MB RAM",
+        "DirectXVersion": "DirectX 12"
+    },
+    "Display": {
+        "CardName": "NVIDIA GeForce GTX 1050 Ti",
+        "Manufacturer": "NVIDIA",
+        "ChipType": "NVIDIA GeForce GTX 1050 Ti",
+        "DisplayMemory": "12097 MB",
+        "SharedMemory": "8078 MB",
+        "DedicatedMemory": "4019 MB"
+    }
+}

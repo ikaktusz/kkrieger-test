@@ -1,0 +1,1 @@
+Avg fps of session: 337.68

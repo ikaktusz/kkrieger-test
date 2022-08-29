@@ -1,0 +1,29 @@
+08/30/2022 01:02:43 INFO:Start logging.
+08/30/2022 01:02:43 INFO:Set game_path: C:\Users\Konstantin\Documents\src\saber_test\pno0001.exe
+08/30/2022 01:02:43 INFO:Set output_path: C:\Users\Konstantin\Documents\src\saber_test\output
+08/30/2022 01:02:43 INFO:[KKriegerGame] Waiting for process to start...
+08/30/2022 01:02:43 INFO:[KKriegerGame] Process found!
+08/30/2022 01:02:43 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:44 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:45 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:46 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:48 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:49 INFO:[DxDiag]: Write sysinfo to: C:\Users\Konstantin\Documents\src\saber_test\output\DxDiag.json
+08/30/2022 01:02:49 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:50 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:51 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:52 INFO:[KKriegerGame] Wait for main menu..
+08/30/2022 01:02:53 INFO:[KKriegerGame] Game loaded. Main menu
+08/30/2022 01:02:53 INFO:[TEST] Main menu
+08/30/2022 01:02:54 INFO:[TEST] Game runing
+08/30/2022 01:02:55 INFO:Screenshot saved: C:\Users\Konstantin\Documents\src\saber_test\output\screenshots\start.png
+08/30/2022 01:02:55 INFO:[PresentMon]: Recording started.
+08/30/2022 01:02:55 INFO:[PerfomanceTracker]: started
+08/30/2022 01:02:58 INFO:Screenshot saved: C:\Users\Konstantin\Documents\src\saber_test\output\screenshots\end.png
+08/30/2022 01:03:00 INFO:[PresentMon]: Recording stopped.
+08/30/2022 01:03:00 INFO:[PresentMon]: Write avg framerate to file: C:\Users\Konstantin\Documents\src\saber_test\output\fps.txt
+08/30/2022 01:03:00 INFO:[PerfomanceTracker]: Stopped
+08/30/2022 01:03:00 INFO:[PerfomanceTracker]: Write data to: C:\Users\Konstantin\Documents\src\saber_test\output\stat.csv
+08/30/2022 01:03:00 INFO:[KKriegerGame]Exit game.
+08/30/2022 01:03:00 INFO:[KKriegerGame] Game process killed.
+08/30/2022 01:03:00 INFO:Test finished!
