@@ -25,7 +25,7 @@ def main():
             logging.info('[TEST] Main menu')
 
         elif kg.GAME_STATE == KG_RUN:
-            logging.info('[TEST] Game runing')
+            logging.info('[TEST] Game running')
 
             time.sleep(1)
 
@@ -62,7 +62,7 @@ if __name__ == '__main__':
         print('This script supports only Windows os.')
         sys.exit(1)
     elif ctypes.windll.shell32.IsUserAnAdmin() != 1:
-        print('Run this script as andmin.')
+        print('Run this script as admin.')
         sys.exit(1)
 
     main()
